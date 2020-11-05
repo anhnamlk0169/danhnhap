@@ -1,0 +1,153 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace formqlsv
+{
+    public partial class formdssv : Form
+    {
+        public formdssv()
+        {
+            InitializeComponent();
+        }
+        private void danhsachlop()
+        {
+            cbokhoa.Items.Clear();
+
+
+
+        }
+        private void formgiaodien_Load(object sender, EventArgs e)
+        {
+            libxcl.Items.Add("");
+            libxcl.Items.Add(""); 
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            fqllop f = new fqllop();
+            this.Hide();
+            f.Show();
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (txbaddnganh.Text.Trim() != "")
+            {
+                libxcl.Items.Add(txbaddnganh.Text);
+                txbaddnganh.Text = "";
+                libxcl.Items.Add(""); 
+            }
+            else
+                MessageBox.Show("Ph?i nh?p tên ngành");
+        }
+
+        private void loginAdminToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnexit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void cbokhoa_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+
+
+
+        }
+
+        private void btnaddcl_Click(object sender, EventArgs e)
+        {
+            if (txbaddcl.Text.Trim() != "")
+            {
+                libxcl.Items.Add(txbaddcl.Text);
+                txbaddcl.Text = "";
+                libxcl.Items.Add("");
+            }
+            else
+                MessageBox.Show("Ph?i nh?p tên l?p");
+        }
+
+        private void btnxoacl_Click(object sender, EventArgs e)
+        {
+            if (libxcl.SelectedIndex < 0)
+                MessageBox.Show("Ch?n danh sách d?  xóa ");
+            else
+            {
+                libxcl.Items.Remove(libxcl.SelectedItem);
+                MessageBox.Show("Xóa tên thành công");
+            }
+        }
+
+        private void btnfindcl_Click(object sender, EventArgs e)
+        {
+            if(cbokhoa.Text != "")
+{
+if(libxcl.Items.Contains(cbokhoa.Text) == true)
+MessageBox.Show("Tìm th?y danh sách ");
+
+else
+
+MessageBox.Show("Không Tìm th?y danh sách ");
+
+}
+else
+MessageBox.Show("Nh?p tên danh sách c?n tìm ");
+}
+
+        private void btnchinhsuacl_Click(object sender, EventArgs e)
+        {
+
+            if (txbaddnganh.Text.Trim() != "")
+            {
+            if (txbaddnganh.Text.Trim() != "")
+                {
+                    libxcl.Items.Insert(Convert.ToInt32(txbaddnganh.Text),
+                    txbaddnganh.Text);
+
+
+                    txbaddnganh.Text = "";
+
+                     libxcl.Items.Add("");
+                }
+                else
+                    MessageBox.Show("ch?nh s?a danh sách ");
+            }
+            else
+                MessageBox.Show("danh sach ch?nh s?a thành công ");
+                
+        }
+
+        }
+    }
